@@ -27,10 +27,15 @@ It's written in golang and should be relatively portable.  It was developed and 
 sacn2cloud [options]
 
 -u # : which sACN universe to listen to
+
 -s hostname : which mqtt server to connect to
+
 -p port : mqtt server port
+
 -i <string> : some string to identify this sender
+
 -t # : change threshold (see below), defaults to probably 25
+
 -c # : number of slots being used (see below), defaults to 512
 
 Change threshold: typically only changes are sent, but if enough changes happen, we send the whole universe.
@@ -41,5 +46,7 @@ Number of slots: if only the first 100 channels are being used, set this to 100.
 cloud2sacn [options]
 
 -u # : which sACN universe to output
+
 -s hostname : which mqtt server to connect to
+
 -p port : mqtt server port
