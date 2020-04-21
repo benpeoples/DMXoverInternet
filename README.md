@@ -8,6 +8,8 @@ During the COVID-19 situation, there's a desire to let remote folks control ligh
 
 This implements a second solution: simply route sACN data over the internet.  There's all sorts of reasons you should never do this in a production environment, but let's give it a try.
 
+The protocol is implemented with the idea that the "presenter" can switch between senders.  I.e., in a lightlab situation, multiple users could trade-off control of a lighting rig, under the control of an instructor.  
+
 ## Security
 
 This is (currently) not implemented with any security or even encryption.   This is a Very Bad Idea.  
