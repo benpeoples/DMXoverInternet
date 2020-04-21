@@ -107,7 +107,7 @@ if err != nil {
 }
 
 //activates the first universe
-ch, err := trans.Activate(1)
+ch, err := trans.Activate(uint16(universe))
 if err != nil {
   log.Fatal(err)
 }
@@ -115,10 +115,8 @@ if err != nil {
 defer close(ch)
 
 //set a unicast destination, and/or use multicast
-trans.SetMulticast(1, true)//this specific setup will not multicast on windows,
+trans.SetMulticast(uint16(universe), true)//this specific setup will not multicast on windows,
 //because no bind address was provided
-
-trans.SetDestinations(1, []string{"192.168.2.1"})
 
   for {
     if(updated == 1) {
