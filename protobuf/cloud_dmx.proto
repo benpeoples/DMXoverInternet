@@ -1,0 +1,15 @@
+option go_package = "clouddmxpb";
+
+message cloudDmx {
+    enum Type {
+        PING = 0;
+        DELTA = 1;
+        COMPLETE = 2;
+      }
+  required Type type = 1;
+  repeated uint32 channels = 2;
+  repeated uint32 values = 3;
+  optional bytes slots = 4;
+  optional uint32 start = 5;
+  optional string id = 6;
+}

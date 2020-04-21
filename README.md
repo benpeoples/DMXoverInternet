@@ -50,3 +50,11 @@ cloud2sacn [options]
 -s hostname : which mqtt server to connect to
 
 -p port : mqtt server port
+
+-i <string> : which string to listen to
+
+### Internals
+
+sacn2cloud advertises PING messages onto /sacn2cloud/v1/ping once per second, these tell you which universe it thinks its sending, as well as the string it's using to identify itself.
+
+Whenever an sACN packet comes in, if the packet has changes, it pushes those changes onto /sacn2cloud/v1/<string> where <string> is the id string provided on the commandline.  
